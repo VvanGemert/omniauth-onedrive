@@ -9,23 +9,21 @@ module OmniAuth
       # Options
       option :name, 'onedrive'
       option :authorize_options, [:scope]
-      option :client_options, {
-        :site => 'https://login.live.com',
-        :authorize_url => 'https://login.live.com/oauth20_authorize.srf',
-        :token_url => 'https://login.live.com/oauth20_token.srf' }
+      option :client_options,
+             site: 'https://login.live.com',
+             authorize_url: 'https://login.live.com/oauth20_authorize.srf',
+             token_url: 'https://login.live.com/oauth20_token.srf'
 
       uid { raw_info['id'] }
 
       info do
-        {
-          :id => raw_info['id'],
-          :email => raw_info['emails']['preferred'],
-          :name => raw_info['name']
-        }
+        {id: raw_info['id'],
+         email: raw_info['emails']['preferred'],
+         name: raw_info['name']}
       end
 
       extra do
-        { :raw_info => raw_info }
+        {raw_info: raw_info}
       end
 
       def raw_info

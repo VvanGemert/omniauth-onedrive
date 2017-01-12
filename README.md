@@ -9,7 +9,11 @@ This gem is slighty based on the version of Plexinc (https://github.com/plexinc/
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Before you can get started you will need to add your platform and set your redirect uri's correctly in the
+apps dashboard. You can get there by going to: https://apps.dev.microsoft.com/#/appList and click on your application.
+If you don't have an application yet, you will need to create it in the same dashboard.
+
+Step two is adding this line to your application's Gemfile:
 
 ```ruby
 gem 'omniauth-onedrive'
@@ -26,7 +30,7 @@ Or install it yourself as:
 ## Usage
 
     # Add to OmniAuth::Builder do
-    provider :onedrive, ENV['live_client_id'], ENV['live_secret_key'], 
+    provider :onedrive, ENV['live_client_id'], ENV['live_secret_key'],
       { :scope => 'wl.signin wl.basic' }
 
 ## Contributing
